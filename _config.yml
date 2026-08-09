@@ -1,0 +1,10 @@
+# GitHub Pages config
+# This tells GitHub Pages not to process the site with Jekyll
+# so our plain HTML/JS setup works correctly.
+
+include:
+  - "*.md"
+  - "posts/"
+  - "images/"
+  - "css/"
+  - "js/"

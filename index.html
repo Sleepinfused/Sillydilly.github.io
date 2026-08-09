@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✦ MY LITTLE CORNER ✦</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- SCANLINE OVERLAY -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- MARQUEE BAR -->
+  <div class="marquee-bar">
+    <div class="marquee-inner">
+      ✦ WELCOME TO MY BLOG ✦ &nbsp;&nbsp;&nbsp; ★ BEST VIEWED IN 1024×768 ★ &nbsp;&nbsp;&nbsp;
+      ♥ MADE WITH LOVE ♥ &nbsp;&nbsp;&nbsp; ✦ WELCOME TO MY BLOG ✦ &nbsp;&nbsp;&nbsp;
+      ★ BEST VIEWED IN 1024×768 ★ &nbsp;&nbsp;&nbsp; ♥ MADE WITH LOVE ♥ &nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-title">
+        <span class="pixel-bracket">[ </span>
+        <span class="title-text">MY LITTLE CORNER</span>
+        <span class="cursor-blink">_</span>
+        <span class="pixel-bracket"> ]</span>
+      </div>
+      <p class="site-tagline">// thoughts, photos & things i like //</p>
+    </div>
+    <div class="header-stars" aria-hidden="true">
+      <span>✦</span><span>★</span><span>✦</span><span>★</span><span>✦</span>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="widget">
+        <div class="widget-title">✦ ABOUT ME ✦</div>
+        <div class="widget-body">
+          <div class="avatar-container">
+            <img src="images/avatar.gif" alt="Avatar" class="avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">( ˘ ³˘)♥</div>
+          </div>
+          <p class="about-text">hi!! welcome to my site. this is where i put all my stuff. hope u like it ♥</p>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">☆ NAVIGATE ☆</div>
+        <div class="widget-body">
+          <nav class="sidebar-nav">
+            <button class="tab-btn active" data-tab="home">🏠 home</button>
+            <button class="tab-btn" data-tab="posts">📝 posts</button>
+            <button class="tab-btn" data-tab="photos">📷 photos</button>
+            <button class="tab-btn" data-tab="about">💖 about</button>
+          </nav>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">♪ NOW PLAYING ♪</div>
+        <div class="widget-body now-playing">
+          <div class="np-icon">♫</div>
+          <div class="np-info">
+            <div class="np-track">edit in config.js</div>
+            <div class="np-artist">your fave song</div>
+            <div class="np-bar"><span class="np-progress"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">★ STATS ★</div>
+        <div class="widget-body stats">
+          <div class="stat-row"><span class="stat-label">posts:</span><span class="stat-val" id="stat-posts">0</span></div>
+          <div class="stat-row"><span class="stat-label">photos:</span><span class="stat-val" id="stat-photos">0</span></div>
+          <div class="stat-row"><span class="stat-label">vibes:</span><span class="stat-val">100%</span></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">✉ LINKS ✉</div>
+        <div class="widget-body links-list" id="links-widget">
+          <!-- populated from config.js -->
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TAB: HOME -->
+      <section class="tab-pane active" id="tab-home">
+        <div class="welcome-box">
+          <div class="wb-header">✦ WELCOME ✦</div>
+          <div class="wb-body" id="home-content">
+            <p>Loading...</p>
+          </div>
+        </div>
+        <div class="recent-posts" id="recent-posts">
+          <!-- populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB: POSTS -->
+      <section class="tab-pane" id="tab-posts">
+        <div class="tab-header">📝 ALL POSTS</div>
+        <div class="posts-grid" id="posts-grid">
+          <!-- populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB: PHOTOS -->
+      <section class="tab-pane" id="tab-photos">
+        <div class="tab-header">📷 PHOTO GALLERY</div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- populated dynamically -->
+        </div>
+      </section>
+
+      <!-- TAB: ABOUT -->
+      <section class="tab-pane" id="tab-about">
+        <div class="tab-header">💖 ABOUT THIS SITE</div>
+        <div class="about-page" id="about-content">
+          <p>Loading...</p>
+        </div>
+      </section>
+
+      <!-- POST VIEWER (overlay) -->
+      <section class="tab-pane" id="tab-post-view">
+        <button class="back-btn" id="back-btn">← back to posts</button>
+        <article class="post-view" id="post-view-content">
+          <!-- rendered markdown goes here -->
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>✦ <span id="footer-name">MY LITTLE CORNER</span> ✦ made with ♥ ✦ hosted on github pages ✦</div>
+    <div class="footer-pixel-art" aria-hidden="true">
+      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/marked.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
